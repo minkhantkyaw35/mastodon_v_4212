@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_08_125420) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_23_082814) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -341,6 +341,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_08_125420) do
     t.datetime "updated_at", null: false
     t.index ["canonical_email_hash"], name: "index_canonical_email_blocks_on_canonical_email_hash", unique: true
     t.index ["reference_account_id"], name: "index_canonical_email_blocks_on_reference_account_id"
+  end
+
+  create_table "communities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "conversation_mutes", force: :cascade do |t|
