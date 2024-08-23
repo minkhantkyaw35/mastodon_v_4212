@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 import AlternateEmailIcon from '@/material-icons/400-24px/alternate_email.svg?react';
+import GroupsIcon from '@/material-icons/400-24px/groups.svg?react';
+
 import BookmarksActiveIcon from '@/material-icons/400-24px/bookmarks-fill.svg?react';
 import BookmarksIcon from '@/material-icons/400-24px/bookmarks.svg?react';
 import ExploreActiveIcon from '@/material-icons/400-24px/explore-fill.svg?react';
@@ -47,6 +49,7 @@ const messages = defineMessages({
   explore: { id: 'explore.title', defaultMessage: 'Explore' },
   firehose: { id: 'column.firehose', defaultMessage: 'Live feeds' },
   direct: { id: 'navigation_bar.direct', defaultMessage: 'Private mentions' },
+  communities: { id: 'navigation_bar.communities', defaultMessage: 'Communities' },
   favourites: { id: 'navigation_bar.favourites', defaultMessage: 'Favorites' },
   bookmarks: { id: 'navigation_bar.bookmarks', defaultMessage: 'Bookmarks' },
   lists: { id: 'navigation_bar.lists', defaultMessage: 'Lists' },
@@ -167,6 +170,7 @@ class NavigationPanel extends Component {
         {signedIn && (
           <>
             <ColumnLink transparent to='/conversations' icon='at' iconComponent={AlternateEmailIcon} text={intl.formatMessage(messages.direct)} />
+            <ColumnLink transparent to='/communities' icon='groups' iconComponent={GroupsIcon} text={intl.formatMessage(messages.communities)} />
             <ColumnLink transparent to='/bookmarks' icon='bookmarks' iconComponent={BookmarksIcon} activeIconComponent={BookmarksActiveIcon} text={intl.formatMessage(messages.bookmarks)} />
             <ColumnLink transparent to='/favourites' icon='star' iconComponent={StarIcon} activeIconComponent={StarActiveIcon} text={intl.formatMessage(messages.favourites)} />
             <ColumnLink transparent to='/lists' icon='list-ul' iconComponent={ListAltIcon} activeIconComponent={ListAltActiveIcon} text={intl.formatMessage(messages.lists)} />

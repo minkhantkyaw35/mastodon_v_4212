@@ -217,3 +217,7 @@ export function NotificationRequest () {
 export function LinkTimeline () {
   return import(/*webpackChunkName: "features/link_timeline" */'../../link_timeline');
 }
+
+export function CommunitiesTimeline () {
+  return import(/*webpackChunkName: "features/link_timeline" */'../../communities');
+}
