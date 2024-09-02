@@ -229,3 +229,9 @@ gem 'rubyzip', '~> 2.3'
 gem 'hcaptcha', '~> 7.1'
 
 gem 'mail', '~> 2.8'
+
+gem 'content_filters', git: 'https://github.com/patchwork-hub/content_filters'
+
+gem 'patch_commu', path: '/Users/macbookpro/workplace/patchwork/community_gem'
+
+gem 'posts', path: '/Users/macbookpro/workplace/patchwork/posts'
