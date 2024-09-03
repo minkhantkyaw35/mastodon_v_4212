@@ -218,6 +218,6 @@ export function LinkTimeline () {
   return import(/*webpackChunkName: "features/link_timeline" */'../../link_timeline');
 }
 
-export function Communities () {
-  return import(/*webpackChunkName: "features/link_timeline" */'../../communities');
-}
+// export function Communities() {
+//   return import(/* webpackChunkName: "community_gem" */ 'collections');
+// }

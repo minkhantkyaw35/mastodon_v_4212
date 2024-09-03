@@ -43,7 +43,7 @@ import {
   AccountTimeline,
   AccountGallery,
   HomeTimeline,
-  Communities,
+  //Communities,
   Followers,
   Following,
   Reblogs,
@@ -214,7 +214,7 @@ class SwitchingColumnsArea extends PureComponent {
 
             <WrappedRoute path='/bookmarks' component={BookmarkedStatuses} content={children} />
             <WrappedRoute path='/pinned' component={PinnedStatuses} content={children} />
-            <WrappedRoute path='/communities' component={Communities} content={children} />
+            {/* <WrappedRoute path='/communities' component={Communities} content={children} /> */}
 
             <WrappedRoute path='/start' component={Onboarding} content={children} />
             <WrappedRoute path='/directory' component={Directory} content={children} />

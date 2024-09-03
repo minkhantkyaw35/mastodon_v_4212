@@ -185,7 +185,6 @@ Rails.application.routes.draw do
   end
 
   resources :tags, only: [:show]
-  resources :communities, only: [:index]
   resources :emojis, only: [:show]
   resources :invites, only: [:index, :create, :destroy]
   resources :filters, except: [:show] do

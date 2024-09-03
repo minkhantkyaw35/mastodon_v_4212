@@ -6,6 +6,7 @@ import ImmutablePureComponent from 'react-immutable-pure-component';
 
 import { supportsPassiveEvents } from 'detect-passive-events';
 
+import '@vendor/features/collections/index';
 import { scrollRight } from '../../../scroll';
 import BundleContainer from '../containers/bundle_container';
 import {

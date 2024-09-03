@@ -1,6 +1,7 @@
 // Note: You must restart bin/webpack-dev-server for changes to take effect
 
 const { basename, dirname, join, relative, resolve } = require('path');
+const path = require('path');
 
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const { sync } = require('glob');
@@ -11,6 +12,9 @@ const AssetsManifestPlugin = require('webpack-assets-manifest');
 
 const { env, settings, themes, output } = require('./configuration');
 const rules = require('./rules');
+
+const vendorPath = path.resolve(__dirname, '../../vendor/patchwork_community');
+
 
 const extensionGlob = `**/*{${settings.extensions.join(',')}}*`;
 const entryPath = join(settings.source_path, settings.source_entry_path);
@@ -98,6 +102,7 @@ module.exports = {
     ],
     alias: {
       "@": resolve(settings.source_path),
+      "@vendor": vendorPath
     }
   },
 

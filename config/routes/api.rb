@@ -44,10 +44,6 @@ namespace :api, format: false do
       resources :list, only: :show
     end
 
-    namespace :community do
-      resources :communities, only: [:index]
-    end
-
     get '/streaming', to: 'streaming#index'
     get '/streaming/(*any)', to: 'streaming#index'
 

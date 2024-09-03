@@ -1,4 +1,4 @@
-// Note: You must restart bin/webpack-dev-server for changes to take effect
+const { resolve } = require('path');
 
 const { merge } = require('webpack-merge');
 
@@ -8,11 +8,33 @@ const sharedConfig = require('./shared');
 const watchOptions = {};
 
 if (process.env.VAGRANT) {
-  // If we are in Vagrant, we can't rely on inotify to update us with changed
-  // files, so we must poll instead. Here, we poll every second to see if
-  // anything has changed.
   watchOptions.poll = 1000;
 }
+
+const customConfig = {
+  resolve: {
+    alias: {
+      //'collections': resolve('/Users/macbookpro/workplace/patchwork/community_gem/app/javascript/mastodon/features/collections/index.jsx'),
+      // './actions/collections': resolve('/Users/macbookpro/workplace/patchwork/community_gem/app/javascript/mastodon/actions/collections.js'),
+      //'mastodon/components/column_link': resolve('/Users/zinmoe/Projects/Newsmast/Patchwork/mastodon_official/app/javascript/mastodon/features/ui/components/column_link')
+    },
+    extensions: ['.js', '.jsx'] // Ensure Webpack resolves .jsx files
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
+  },
+};
 
 module.exports = merge(sharedConfig, {
   mode: 'development',

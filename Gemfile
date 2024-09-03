@@ -230,6 +230,8 @@ gem 'hcaptcha', '~> 7.1'
 
 gem 'mail', '~> 2.8'
 
+gem 'byebug'
+
 gem 'content_filters', git: 'https://github.com/patchwork-hub/content_filters'
 
 gem 'patch_commu', path: '/Users/macbookpro/workplace/patchwork/community_gem'
